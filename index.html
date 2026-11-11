@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AniDrip — Electric Style. Main Character Energy.</title>
+<meta name="description" content="AniDrip — statement streetwear and custom T-shirts. Upload your own front and back designs.">
+<meta name="theme-color" content="#080808">
+<link rel="icon" href="assets/brand/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;700;800&family=Bebas+Neue&family=Pacifico&family=Permanent+Marker&family=Orbitron:wght@700&family=Playfair+Display:wght@700&family=Bangers&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body class="locked">
+<!-- INTRO: lightning storm forms the real AniDrip symbol -->
+<div id="intro" aria-hidden="true">
+  <canvas id="ibolt"></canvas><div class="iflash"></div><div class="iring"></div><div class="iring r2"></div>
+  <div class="ic">
+    <div class="sym">
+      <i class="ln"></i>
+      <svg viewBox="230 190 560 716"><defs><filter id="gl" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path class="bp" pathLength="1" d="M688 202 L342 618 L478 586 L305 892 L688 465 L493 537 Z" filter="url(#gl)"/></svg>
+      <img src="assets/brand/symbol.png" alt="">
+    </div>
+    <h2 class="iname" data-t="AniDrip"><span>Ani</span><b>Drip</b></h2>
+    <p class="itag" id="itag"></p>
+  </div>
+  <button id="skip" type="button">Skip intro</button>
+</div>
+<div id="fl"></div><div id="prog"></div><div id="cur"></div><div id="cr"></div><div id="cd"></div>
+<div class="glow"></div><canvas id="bg" aria-hidden="true"></canvas>
+
+<header id="nav" class="glass"><a href="#design" class="brand" aria-label="AniDrip home"><img src="assets/brand/logo-mark.png" alt="AniDrip"></a>
+<nav id="menu"><a href="#design" class="hl">Custom Tee</a><a href="#new">New Arrivals</a><a href="#collections">Collections</a><a href="#shirts">Shirts</a><a href="#anime">Anime</a><a href="#shop">Shop All</a><a href="#about">About</a></nav>
+<button id="bagBtn" aria-label="Bag"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8a3 3 0 016 0"/></svg><b id="bagN">0</b></button>
+<button id="burger" aria-label="Menu"><span></span><span></span></button></header>
+
+<main>
+<!-- CUSTOM T-SHIRT DESIGNER (top of site) -->
+<section id="design" class="sec designer">
+  <div class="head center rv"><p class="eyebrow" id="tagline">ELECTRIC STYLE. MAIN CHARACTER ENERGY.</p>
+  <h1>Design Your Own <em>Custom Apparel</em></h1>
+  <p class="lead">Bring Your Ideas to Life. Upload Your Design and Customize Your T-Shirt.</p>
+  <p class="must">Kindly upload in PNG in high quality image.</p></div>
+  <div class="gpick glass rv"><div class="gr"><span>1 · What do you want to print on?</span><div class="chips" id="gType"><button type="button" data-v="tee" class="on">T-Shirt</button><button type="button" data-v="sweat">Sweatshirt</button><button type="button" data-v="hoodie">Hoodie</button></div></div>
+<div class="gr" id="slRow"><span>2 · Sleeve length</span><div class="chips" id="gSleeve"><button type="button" data-v="half" class="on">Half sleeve</button><button type="button" data-v="full">Full sleeve</button></div></div><p class="gnote" id="gNote"></p>
+<div class="gr gcol"><span>3 · Garment colour <em id="cName">Black</em></span><div class="swrow"><div class="swatches" id="swatches"></div><button type="button" id="cMore" class="cmore" aria-label="Pick any colour" aria-expanded="false"><i></i><b>Custom</b></button></div>
+<div class="cpop glass" id="cPop" hidden><canvas id="svBox" width="260" height="170"></canvas><input type="range" id="hueR" min="0" max="360" value="0" aria-label="Hue"><div class="chex"><i id="cPrev"></i><input id="hexIn" maxlength="7" value="#151515" aria-label="Hex colour"><button type="button" class="btn sm" id="cDone">Done</button></div></div></div></div>
+  <div class="dgrid">
+    <div class="dp glass rv" data-side="front">
+      <h3>Front Design</h3>
+      <div class="stage"><canvas class="gc" width="800" height="900"></canvas><div class="ov"><div class="zone"><span>FRONT PRINT AREA</span></div><div class="box" hidden><i class="hd tl" data-h="tl"></i><i class="hd tr" data-h="tr"></i><i class="hd bl" data-h="bl"></i><i class="hd br" data-h="br"></i><i class="hd rot" data-h="rot"></i></div></div></div>
+      <div class="dctl"><label class="btn up">Upload Front Design<input type="file" accept="image/png" hidden></label><button class="btn ghost sm addtx" type="button">Aa Add Text</button><button class="btn ghost sm crop" type="button" hidden>✂ Crop</button><button class="btn ghost sm rep" type="button" hidden>Replace</button><button class="btn ghost sm rm" type="button" hidden>Remove</button></div>
+      <div class="tx" hidden><input type="text" class="tin" maxlength="24" placeholder="Type your name or text" aria-label="Text to print"><div class="tfonts"><button type="button" class="tf on" data-f="Bebas Neue" style="font-family:'Bebas Neue'">Name</button><button type="button" class="tf" data-f="Pacifico" style="font-family:'Pacifico'">Name</button><button type="button" class="tf" data-f="Permanent Marker" style="font-family:'Permanent Marker'">Name</button><button type="button" class="tf" data-f="Orbitron" style="font-family:'Orbitron'">Name</button><button type="button" class="tf" data-f="Playfair Display" style="font-family:'Playfair Display'">Name</button><button type="button" class="tf" data-f="Bangers" style="font-family:'Bangers'">Name</button></div><div class="tcol"><span>Text colour</span><div class="tsw"><button type="button" data-c="#ffffff" style="--c:#ffffff" aria-label="#ffffff"></button><button type="button" data-c="#111111" style="--c:#111111" aria-label="#111111"></button><button type="button" data-c="#e50914" style="--c:#e50914" aria-label="#e50914"></button><button type="button" data-c="#f2c230" style="--c:#f2c230" aria-label="#f2c230"></button><button type="button" data-c="#2457c5" style="--c:#2457c5" aria-label="#2457c5"></button><button type="button" data-c="#1f7a4a" style="--c:#1f7a4a" aria-label="#1f7a4a"></button></div><input type="color" class="tpick" value="#ffffff" aria-label="Custom text colour"></div></div><div class="adj" hidden><label>Size <input type="range" class="rs" min="6" max="100" value="30" aria-label="Print size"><output>30%</output></label><label>Rotate <input type="range" class="rr" min="-180" max="180" value="0" aria-label="Rotate"><output>0°</output></label><div class="presets"><button type="button" class="btn ghost sm" data-s="16">Small</button><button type="button" class="btn ghost sm" data-s="30">Medium</button><button type="button" class="btn ghost sm" data-s="48">Large</button><button type="button" class="btn ghost sm rc">Centre</button></div><small>Drag to move · corner handles to resize · top handle to rotate</small></div>
+      <div class="mt" hidden><div class="mtt"><b class="mp">0%</b><span class="ml"></span></div><div class="mbar"><i></i></div><p class="mw"></p></div>
+      <p class="st" role="status"></p>
+    </div>
+    <div class="dp glass rv" data-side="back">
+      <h3>Back Design</h3>
+      <div class="stage"><canvas class="gc" width="800" height="900"></canvas><div class="ov"><div class="zone"><span>BACK PRINT AREA</span></div><div class="box" hidden><i class="hd tl" data-h="tl"></i><i class="hd tr" data-h="tr"></i><i class="hd bl" data-h="bl"></i><i class="hd br" data-h="br"></i><i class="hd rot" data-h="rot"></i></div></div></div>
+      <div class="dctl"><label class="btn up">Upload Back Design<input type="file" accept="image/png" hidden></label><button class="btn ghost sm addtx" type="button">Aa Add Text</button><button class="btn ghost sm crop" type="button" hidden>✂ Crop</button><button class="btn ghost sm rep" type="button" hidden>Replace</button><button class="btn ghost sm rm" type="button" hidden>Remove</button></div>
+      <div class="tx" hidden><input type="text" class="tin" maxlength="24" placeholder="Type your name or text" aria-label="Text to print"><div class="tfonts"><button type="button" class="tf on" data-f="Bebas Neue" style="font-family:'Bebas Neue'">Name</button><button type="button" class="tf" data-f="Pacifico" style="font-family:'Pacifico'">Name</button><button type="button" class="tf" data-f="Permanent Marker" style="font-family:'Permanent Marker'">Name</button><button type="button" class="tf" data-f="Orbitron" style="font-family:'Orbitron'">Name</button><button type="button" class="tf" data-f="Playfair Display" style="font-family:'Playfair Display'">Name</button><button type="button" class="tf" data-f="Bangers" style="font-family:'Bangers'">Name</button></div><div class="tcol"><span>Text colour</span><div class="tsw"><button type="button" data-c="#ffffff" style="--c:#ffffff" aria-label="#ffffff"></button><button type="button" data-c="#111111" style="--c:#111111" aria-label="#111111"></button><button type="button" data-c="#e50914" style="--c:#e50914" aria-label="#e50914"></button><button type="button" data-c="#f2c230" style="--c:#f2c230" aria-label="#f2c230"></button><button type="button" data-c="#2457c5" style="--c:#2457c5" aria-label="#2457c5"></button><button type="button" data-c="#1f7a4a" style="--c:#1f7a4a" aria-label="#1f7a4a"></button></div><input type="color" class="tpick" value="#ffffff" aria-label="Custom text colour"></div></div><div class="adj" hidden><label>Size <input type="range" class="rs" min="6" max="100" value="30" aria-label="Print size"><output>30%</output></label><label>Rotate <input type="range" class="rr" min="-180" max="180" value="0" aria-label="Rotate"><output>0°</output></label><div class="presets"><button type="button" class="btn ghost sm" data-s="16">Small</button><button type="button" class="btn ghost sm" data-s="30">Medium</button><button type="button" class="btn ghost sm" data-s="48">Large</button><button type="button" class="btn ghost sm rc">Centre</button></div><small>Drag to move · corner handles to resize · top handle to rotate</small></div>
+      <div class="mt" hidden><div class="mtt"><b class="mp">0%</b><span class="ml"></span></div><div class="mbar"><i></i></div><p class="mw"></p></div>
+      <p class="st" role="status"></p>
+    </div>
+  </div>
+  <div class="mall glass rv" id="mAll" hidden><div class="ring" id="mRing"><b>0%</b></div><div class="mtxt"><h3>Print &amp; colour match</h3><p id="mSum"></p><div class="msug" id="mSug"></div></div></div>
+  <div class="dsend glass rv">
+    <div class="dopts"><label>Size<select id="dSize"><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>XXL</option></select></label><label>Quantity<input id="dQty" type="number" min="1" max="50" value="1"></label><label class="grow">Delivery address<input id="dAddr" maxlength="240" placeholder="House / street, area, city" autocomplete="street-address"></label><label class="grow">Notes (optional)<input id="dNote" maxlength="200" placeholder="Placement, anything we should know"></label></div>
+    <button id="dSend" class="btn big" type="button"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.2 14.2c-.2.6-1.300 1.200-1.800 1.200-.5.100-1 .2-3.300-.7-2.800-1.100-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.7-.1l1.900.9c.3.1.5.2.5.3.1.2.1.8-.1 1.200z"/></svg>Drop Your Order</button>
+    <div class="dprice" id="dPrice"></div>
+    <small>Your mockup image (garment colour + exact print placement) goes along with your order message.</small>
+  </div>
+</section>
+
+<div class="mq" aria-hidden="true"><div class="mqt"><span>ELECTRIC STYLE</span><i>⚡</i><span>MAIN CHARACTER ENERGY</span><i>⚡</i><span>ELECTRIC STYLE</span><i>⚡</i><span>MAIN CHARACTER ENERGY</span><i>⚡</i><span>ELECTRIC STYLE</span><i>⚡</i><span>MAIN CHARACTER ENERGY</span><i>⚡</i><span>ELECTRIC STYLE</span><i>⚡</i><span>MAIN CHARACTER ENERGY</span><i>⚡</i><span>ELECTRIC STYLE</span><i>⚡</i><span>MAIN CHARACTER ENERGY</span><i>⚡</i><span>ELECTRIC STYLE</span><i>⚡</i><span>MAIN CHARACTER ENERGY</span><i>⚡</i></div></div>
+<section id="home" class="sec drop"><div class="dropbox glass rv"><div class="dt"><p class="eyebrow">THE NEW DROP</p><h2>Strike like <em>lightning.</em></h2><p>Statement graphics, considered fits and a premium feel — built for the main character.</p><div class="btns"><a href="#collections" class="btn">Explore Collection</a><a href="#shop" class="btn ghost">Shop Now</a></div></div><div class="di"><img src="assets/models/hero.jpg" alt="AniDrip campaign" loading="lazy"></div></div></section>
+
+<section id="new" class="sec"><div class="head rv"><p class="eyebrow">JUST LANDED</p><h2>New Arrivals</h2></div><div class="grid" id="newRow"></div></section>
+<section id="shirts" class="sec"><div class="head rv"><p class="eyebrow">THE SHIRT COLLECTION</p><h2>Tees, charged</h2></div><div class="grid" id="shirtGrid"></div></section>
+<section id="anime" class="sec" hidden><div class="head rv"><h2>Anime</h2></div><div class="grid" id="animeGrid"></div></section>
+<section id="models" class="sec"><div class="head rv"><p class="eyebrow">MODEL SHOWCASE</p><h2>Worn with intent</h2></div><div class="showcase" id="showcase"></div></section>
+<section id="best" class="sec"><div class="head rv"><p class="eyebrow">MOST WANTED</p><h2>Best Sellers</h2></div><div class="hscroll" id="bestRow"></div></section>
+<section id="collections" class="sec"><div class="head rv"><p class="eyebrow">FEATURED COLLECTIONS</p><h2>Collections</h2></div><div class="cols" id="cols"></div></section>
+<section id="shop" class="sec"><div class="head rv"><p class="eyebrow">THE FULL EDIT</p><h2>Shop All</h2></div><div class="filters" id="filters"></div><div class="grid" id="allGrid"></div></section>
+
+<section id="about" class="sec about"><div class="about-i glass rv"><img src="assets/brand/symbol.png" alt="AniDrip symbol" loading="lazy"></div>
+  <div class="about-t rv"><p class="eyebrow">ABOUT ANIDRIP</p><h2>Wear the main character.</h2>
+  <p>AniDrip is a clothing brand built around statement graphics, considered fits and a premium feel — with the option to put your own artwork on a tee.</p>
+  <p>Order directly on WhatsApp, or send us your own front and back designs from the top of this page.</p></div></section>
+</main>
+
+<section class="wabig"><div class="glass inner rv"><p class="eyebrow">NEED HELP OR WANT TO ORDER?</p><h2>Chat with us</h2><p>Message us directly for sizes, colours and delivery.</p><a id="waMain" class="btn big" target="_blank" rel="noopener">Chat on WhatsApp</a></div></section>
+<footer class="foot">
+  <div class="ftop"><div><img src="assets/brand/logo-mark.png" alt="AniDrip" class="flogo"><p class="fsub" id="fsub"></p></div>
+  <div class="fcols">
+    <div><h4>Explore</h4><a href="#design">Custom T-Shirt</a><a href="#new">New Arrivals</a><a href="#shirts">Shirts</a><a href="#shop">Shop All</a><a href="#about">About</a></div>
+    <div><h4>Connect</h4><div id="conn"></div></div>
+    <div><h4>Info</h4><a href="#" data-info="Privacy Policy: we only use your details to process your WhatsApp order.">Privacy Policy</a><a href="#" data-info="Shipping &amp; Returns: please confirm delivery time and exchange terms with us on WhatsApp when ordering.">Shipping &amp; Returns</a></div>
+  </div></div>
+  <p class="copy">© 2026 ANIDRIP. All rights reserved.</p>
+</footer>
+<section class="mol" id="mol" aria-label="AniDrip"><canvas id="molC"></canvas></section>
+
+<!-- Design send modal -->
+<div id="wm" class="modal"><div class="mbox glass"><button class="x" data-x aria-label="Close">×</button>
+  <h3 id="wTitle">Preparing your design…</h3><p class="gnote" id="wGar"></p>
+  <div class="wprev"><img id="wMock" alt="Your design mockup"><div class="spin" id="wSpin"></div></div>
+  <p class="wst" id="wSt" role="status"></p>
+  <div class="wbtns"><button id="waOpen" class="btn" type="button">Drop Your Order</button><a id="dlM" class="btn ghost" download="anidrip-custom-design.jpg" hidden>Download Image</a></div></div></div>
+<!-- Crop modal -->
+<div id="cm" class="modal"><div class="mbox glass cbox"><button class="x" data-x aria-label="Close">×</button>
+  <h3>Crop your design</h3><p class="gnote">Drag the box or its handles to choose the part to print.</p>
+  <div class="cwrap"><div class="cin" id="cIn"><img id="cImg" alt="Design to crop" draggable="false"><div class="crect" id="cRect"><i data-h="tl"></i><i data-h="t"></i><i data-h="tr"></i><i data-h="r"></i><i data-h="br"></i><i data-h="b"></i><i data-h="bl"></i><i data-h="l"></i></div></div></div>
+  <div class="chips cchips" id="cAsp"><button type="button" data-a="0" class="on">Free</button><button type="button" data-a="1">1:1</button><button type="button" data-a="0.75">3:4</button><button type="button" data-a="1.3333">4:3</button></div>
+  <div class="wbtns"><button class="btn ghost sm" id="cTrim" type="button">Auto-trim empty edges</button><button class="btn ghost sm" id="cWhite" type="button">Remove white background</button><button class="btn ghost sm" id="cReset" type="button">Reset</button><button class="btn" id="cApply" type="button">Apply crop</button></div></div></div>
+<!-- Product modal -->
+<div id="pm" class="modal"><div class="mbox glass"><button class="x" data-x aria-label="Close">×</button><div id="pmBody"></div></div></div>
+<!-- Bag -->
+<aside id="bag" class="glass"><div class="bh"><h3>Your Bag</h3><button class="x" id="bagX" aria-label="Close">×</button></div><div id="bagItems"></div><div id="bagSug"></div><div class="bf"><div class="tot"><span>Total</span><b id="bagT">0</b></div><button class="btn wa" id="order">Buy Now</button><small>No online payment — your order details are sent to us to confirm.</small></div></aside>
+<div id="co" class="modal"><div class="mbox glass cob"><button class="x" data-x aria-label="Close">×</button>
+  <h3>Checkout</h3><div id="coItems" class="coitems"></div>
+  <label class="cof">Your name<input id="coName" maxlength="60" placeholder="Full name" autocomplete="name"></label>
+  <label class="cof">Delivery address<textarea id="coAddr" rows="3" maxlength="240" placeholder="House / street, area, city" autocomplete="street-address"></textarea></label>
+  <p class="wst" id="coSt" role="status"></p>
+  <div class="cosum"><div><span>Subtotal</span><b id="coSub"></b></div><div><span>Delivery</span><b id="coDel">Enter address</b></div><div class="cot"><span>Total</span><b id="coTot"></b></div></div>
+  <button class="btn wa" id="coGo" type="button">Place Order on WhatsApp</button><small>No online payment — we confirm your order and delivery on WhatsApp.</small></div></div>
+<div id="toast"></div>
+<script>document.querySelector(".fcols").addEventListener("click",function(e){var a=e.target.closest("a");if(!a)return;this.querySelectorAll("a.hit").forEach(function(x){x.classList.remove("hit")});a.classList.add("hit")})</script>
+<script src="config.js"></script><script src="products.js"></script><script src="mockups.js"></script><script src="bg.js"></script><script src="fx.js"></script><script src="designer.js"></script><script src="molecules.js"></script><script src="loader.js"></script>
+</body></html>
